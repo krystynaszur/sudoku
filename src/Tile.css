@@ -1,0 +1,9 @@
+.Tile {
+    color: red;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
