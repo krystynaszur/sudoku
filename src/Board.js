@@ -3,22 +3,24 @@ import Tile from './Tile';
 import App from './App';
 import './Board.css';
 
-
 class Board extends React.Component {
     render() {
       
         const mapOfBoardData = this.props.boardData.split("").map(createTile);
         console.log (mapOfBoardData);
+       
+        function createTile(value, index) {
+            if (value == ".") {
+                value = ""
+            }
 
-        function createTile(i) {
-            if (i == ".") {
-                i = ""
-            }
-    
-          function handleChange(event) {
+        function handleChange(event) {
+           var self=this;
                 console.log(event.target.value);
+              console.log(index);
+              console.log(self.props.boardData[index]);
             }
-            return <Tile value={i} onChange={handleChange} />
+            return <Tile value={value} key={index} onChange={handleChange} />
         }
 
         return (
