@@ -1,4 +1,4 @@
-.Tile {
+input {
     color: red;
     font-size: 30px;
     height: 50px;
@@ -6,4 +6,11 @@
     text-align: center;
     border: 1px solid black;
     box-sizing: border-box;
+}
+
+.initialTile {
+    color: black;
+}
+
+.noInitialTile {
 }
