@@ -12,21 +12,22 @@ class Board extends React.Component {
 
     handleChange(index, event) {
         console.log(event.target.value);
-        console.log(this);
-        console.log(index);
-        this.props.enterValue(index, event.target.value)
+        let newValue = event.target.value % 10;
+        //  console.log(this);
+        //  console.log(index);
+        this.props.enterValue(index, newValue)
     }
 
     createTile(value, index) {
         if (value == ".") {
             value = ""
         }
-        console.log(this.props.initialboardData[index]);
-        
+        // console.log(this.props.initialboardData[index]);
+
         if (value == this.props.initialboardData[index]) {
-            console.log(this.props.initialboardData[index]);
-            console.log(value);
-            return <Tile initialTile="initialTile" value={value} key={index}  />
+            //  console.log(this.props.initialboardData[index]);
+            //   console.log(value);
+            return <Tile initialTile="initialTile" value={value} key={index} />
         }
         else {
             return <Tile initialTile="noInitialTile" value={value} key={index} onChange={this.handleChange.bind(this, index)} />
